@@ -19,30 +19,45 @@ def send_email(post, topic):
 
     hashtags = " ".join(post["hashtags"])
 
+    linkedin_post = f"""
+    🚀 {post['hook']}
+    
+    {post['body']}
+    
+    {post['cta']}
+    
+    {hashtags}
+    """
+    
     html = f"""
     <html>
-    <body style="font-family:Arial">
-
-    <h2>{post['title']}</h2>
-
-    <h3>Topic</h3>
-    <p>{topic}</p>
-
-    <h3>Hook</h3>
-    <p>{post['hook']}</p>
-
-    <h3>Body</h3>
-    <p>{post['body']}</p>
-
-    <h3>CTA</h3>
-    <p>{post['cta']}</p>
-
-    <h3>Hashtags</h3>
-    <p>{hashtags}</p>
-
-    <h3>Image Prompt</h3>
-    <p>{post['image_prompt']}</p>
-
+    <body style="font-family:Arial; line-height:1.6; max-width:800px; margin:auto;">
+    
+    <h2>📌 Today's LinkedIn Post</h2>
+    
+    <div style="background:#f5f5f5;padding:20px;border-radius:8px;white-space:pre-wrap;">
+    {linkedin_post}
+    </div>
+    
+    <hr>
+    
+    <h2>🖼 Image Prompt</h2>
+    
+    <div style="background:#eef6ff;padding:20px;border-radius:8px;white-space:pre-wrap;">
+    {post['image_prompt']}
+    </div>
+    
+    <hr>
+    
+    <p><b>Instructions</b></p>
+    
+    <ol>
+    <li>Copy the LinkedIn Post.</li>
+    <li>Generate the image using the Image Prompt.</li>
+    <li>Attach the image.</li>
+    <li>Publish on LinkedIn.</li>
+    </ol>
+    
     </body>
     </html>
     """
