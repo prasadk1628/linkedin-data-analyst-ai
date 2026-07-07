@@ -3,6 +3,7 @@ from src.ai_generator import generate_post
 from src.file_manager import save_post
 from src.config import MODEL_NAME
 from src.database import initialize_database, insert_post
+from src.email_sender import send_email
 
 
 class ContentPipeline:
@@ -31,6 +32,7 @@ class ContentPipeline:
         )
 
         insert_post(post, topic, MODEL_NAME)
+        send_email(post, topic)
 
         mark_completed(topic)
 
