@@ -1,4 +1,4 @@
-# LinkedIn Data Analyst AI Generator
+#LinkedIn Content Automation Engine 
 
 [![Python](https://img.shields.io/badge/Python-3.12-3776AB?logo=python&logoColor=white)](https://python.org)
 [![Gemini API](https://img.shields.io/badge/Google-Gemini%202.5%20Flash-4285F4?logo=google&logoColor=white)](https://ai.google.dev/)
@@ -29,7 +29,7 @@ The result is inconsistent posting habits and missed opportunities for networkin
 
 # The Solution
 
-LinkedIn Data Analyst AI Generator automates the entire content generation workflow.
+LinkedIn Content Automation Engine  automates the entire content generation workflow.
 
 Every execution performs the complete pipeline automatically:
 
