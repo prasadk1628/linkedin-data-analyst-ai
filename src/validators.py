@@ -4,7 +4,7 @@ REQUIRED_FIELDS = [
     "body",
     "cta",
     "hashtags",
-    "image_prompt",
+    "image_specification",
     "estimated_read_time",
     "difficulty",
     "category"
