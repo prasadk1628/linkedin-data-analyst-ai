@@ -44,7 +44,10 @@ def send_email(post, topic):
     <h2>🖼 Image Prompt</h2>
     
     <div style="background:#eef6ff;padding:20px;border-radius:8px;white-space:pre-wrap;">
-    {post['image_prompt']}
+    json.dumps(
+        post["image_specification"],
+        indent=2
+    )
     </div>
     
     <hr>
