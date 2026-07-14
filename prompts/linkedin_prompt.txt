@@ -14,7 +14,24 @@ Return this exact structure:
   "body": "",
   "cta": "",
   "hashtags": [],
-  "image_prompt": "",
+
+  "image_specification": {{
+    "title": "",
+    "purpose": "",
+    "audience": "",
+    "difficulty": "",
+    "main_concept": "",
+    "learning_objective": "",
+    "key_concepts": [],
+    "primary_visual": "",
+    "supporting_visuals": [],
+    "visual_metaphor": "",
+    "style": "",
+    "color_palette": "",
+    "aspect_ratio": "1:1",
+    "branding": "Professional LinkedIn"
+  }},
+
   "estimated_read_time": 0,
   "difficulty": "",
   "category": ""
@@ -24,20 +41,45 @@ Rules:
 
 Topic: {topic}
 
-- The body should be 150–200 words.
+Generate a professional LinkedIn educational post.
+
+Requirements:
+
+- Body should contain 150–200 words.
 - Hook should be one sentence.
 - CTA should encourage comments.
 - Exactly 5 hashtags.
-- estimated_read_time should be an integer (seconds).
-- difficulty must be one of:
-  Beginner
-  Intermediate
-  Advanced
-- category should be one of:
-  SQL
-  Excel
-  Python
-  Power BI
-  Statistics
-  Data Cleaning
-  Data Visualization
+- estimated_read_time must be an integer (seconds).
+
+difficulty must be one of:
+- Beginner
+- Intermediate
+- Advanced
+
+category must be one of:
+- SQL
+- Excel
+- Python
+- Power BI
+- Statistics
+- Data Cleaning
+- Data Visualization
+
+For image_specification:
+
+- title should match the topic.
+- purpose should describe why the image exists.
+- audience should describe the intended viewer.
+- difficulty should match the post difficulty.
+- main_concept should summarize the single most important idea.
+- learning_objective should describe what the viewer should understand after seeing the image.
+- key_concepts should contain 3–6 important concepts.
+- primary_visual should describe the central illustration.
+- supporting_visuals should describe secondary graphics, icons, charts, arrows, or diagrams.
+- visual_metaphor should describe the best visual analogy if one exists; otherwise leave it empty.
+- style should recommend the best visual style (e.g., Modern Flat Vector Infographic, Isometric Illustration, Editorial Illustration, Technical Diagram).
+- color_palette should recommend a professional palette (e.g., Blue, White, Gray).
+- aspect_ratio should default to "1:1".
+- branding should always be "Professional LinkedIn".
+
+The response must be valid JSON only.
