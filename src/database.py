@@ -65,7 +65,7 @@ def insert_post(post, topic, model):
         post["body"],
         post["cta"],
         ",".join(post["hashtags"]),
-        post["image_specification"],
+        json.dumps(post["image_specification"]),
         post["estimated_read_time"],
         post["difficulty"],
         post["category"],
