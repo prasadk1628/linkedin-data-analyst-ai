@@ -1,6 +1,7 @@
 from pathlib import Path
 from datetime import datetime
 import csv
+import json
 
 DATA_DIR = Path("data")
 POSTS_DIR = Path("generated_posts")
@@ -54,9 +55,14 @@ def save_post(post: dict, topic: str, model: str):
 
         f.write("\n")
 
-        f.write("IMAGE PROMPT\n\n")
+        f.write("IMAGE SPECIFICATION\n\n")
 
-        f.write(post["image_specification"])
+        f.write(
+            json.dumps(
+                post["image_specification"],
+                indent=4
+            )
+        )
 
     # ---------- Save CSV ----------
 
@@ -68,7 +74,7 @@ def save_post(post: dict, topic: str, model: str):
         post["body"],
         post["cta"],
         ",".join(post["hashtags"]),
-        post["image_specification"],
+        json.dumps(post["image_specification"]),
         post["estimated_read_time"],
         post["difficulty"],
         post["category"],

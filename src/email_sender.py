@@ -1,3 +1,4 @@
+import json
 import os
 import smtplib
 from email.mime.multipart import MIMEMultipart
@@ -20,47 +21,50 @@ def send_email(post, topic):
     hashtags = " ".join(post["hashtags"])
 
     linkedin_post = f"""
-    🚀 {post['hook']}
-    
-    {post['body']}
-    
-    {post['cta']}
-    
-    {hashtags}
-    """
-    
+🚀 {post['hook']}
+
+{post['body']}
+
+{post['cta']}
+
+{hashtags}
+"""
+
+    image_specification = json.dumps(
+        post["image_specification"],
+        indent=4
+    )
+
     html = f"""
     <html>
     <body style="font-family:Arial; line-height:1.6; max-width:800px; margin:auto;">
-    
+
     <h2>📌 Today's LinkedIn Post</h2>
-    
+
     <div style="background:#f5f5f5;padding:20px;border-radius:8px;white-space:pre-wrap;">
-    {linkedin_post}
+{linkedin_post}
     </div>
-    
+
     <hr>
-    
-    <h2>🖼 Image Prompt</h2>
-    
+
+    <h2>🖼 Image Specification</h2>
+
     <div style="background:#eef6ff;padding:20px;border-radius:8px;white-space:pre-wrap;">
-    json.dumps(
-        post["image_specification"],
-        indent=2
-    )
+{image_specification}
     </div>
-    
+
     <hr>
-    
+
     <p><b>Instructions</b></p>
-    
+
     <ol>
-    <li>Copy the LinkedIn Post.</li>
-    <li>Generate the image using the Image Prompt.</li>
-    <li>Attach the image.</li>
-    <li>Publish on LinkedIn.</li>
+        <li>Copy the LinkedIn post.</li>
+        <li>Copy the Image Specification.</li>
+        <li>Paste it into your ChatGPT Images Project.</li>
+        <li>Generate the image.</li>
+        <li>Publish the post with the generated image on LinkedIn.</li>
     </ol>
-    
+
     </body>
     </html>
     """
