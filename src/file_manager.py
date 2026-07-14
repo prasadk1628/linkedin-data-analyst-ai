@@ -18,7 +18,7 @@ HEADER = [
     "body",
     "cta",
     "hashtags",
-    "image_prompt",
+    "image_specification",
     "estimated_read_time",
     "difficulty",
     "category",
@@ -56,7 +56,7 @@ def save_post(post: dict, topic: str, model: str):
 
         f.write("IMAGE PROMPT\n\n")
 
-        f.write(post["image_prompt"])
+        f.write(post["image_specification"])
 
     # ---------- Save CSV ----------
 
@@ -68,7 +68,7 @@ def save_post(post: dict, topic: str, model: str):
         post["body"],
         post["cta"],
         ",".join(post["hashtags"]),
-        post["image_prompt"],
+        post["image_specification"],
         post["estimated_read_time"],
         post["difficulty"],
         post["category"],
